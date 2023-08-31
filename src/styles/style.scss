@@ -1,0 +1,11 @@
+@use "./variables/colors" as colors;
+$font-size: 100px;
+
+body {
+  background-color: colors.$aqua-color;
+}
+h1 {
+  color: red;
+  font-style: italic;
+  font-size: $font-size;
+}
