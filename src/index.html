@@ -7,20 +7,9 @@
   </head>
 
   <body>
-    <header>
-      <!--  <div class="color-palette">
-            <div class="color-palette__color" data-color="1">1</div>
-            <div class="color-palette__color" data-color="2">2</div>
-            <div class="color-palette__color" data-color="3">3</div>
-            <div class="color-palette__color" data-color="4">4</div>
-            <div class="color-palette__color" data-color="5">5</div>
-            <div class="color-palette__color" data-color="6">6</div>
-            <div class="color-palette__color" data-color="7">7</div>
-            <div class="color-palette__color" data-color="8">8</div>
-            <div class="color-palette__color" data-color="9">9</div>
-            <div class="color-palette__color" data-color="10">10</div>
-          </div>
+    <!--     <div class="sticky-left"><p>Thoughts, stories and ideas.</p></div>
  -->
+    <header>
       <div class="sticky-header">
         <a
           class="header-envato_market"
@@ -36,7 +25,7 @@
           src="https://maido-dark.fueko.net/content/images/2020/06/maido.svg"
           alt="Maido"
         />
-        <nav>
+        <nav class="nav-list">
           <div class="nav-item">Home<span class="notification-dot"></span></div>
           <div class="nav-item">Features</div>
           <div class="nav-item">Style Guide</div>
@@ -46,37 +35,65 @@
           <div class="nav-item">🔍</div>
         </nav>
       </div>
+
       <section class="pinned-articles">
         <div class="pinned-articles__item big">
-          <p>by James Bryant</p>
-          <h1>One space, so many possibilities</h1>
+          <div class="tag">PINNED</div>
+          <div>
+            <p>by James Bryant</p>
+            <h1>One space, so many possibilities</h1>
+          </div>
         </div>
         <div class="pinned-articles__item small">
-          <p>by James Bryant</p>
-          <h1>One space, so many possibilities</h1>
+          <div class="tag">PINNED</div>
+          <div>
+            <p>by Janet Robertson</p>
+            <h1>Make the open space open for more</h1>
+          </div>
         </div>
         <div class="pinned-articles__item small">
-          <p>by James Bryant</p>
-          <h1>One space, so many possibilities</h1>
+          <div class="tag">PINNED</div>
+          <div>
+            <p>by James Bryant and other author</p>
+            <h1>An open space for open mind</h1>
+          </div>
         </div>
-        <div class="pinned-articles__item small dark">
-          <p>by James Bryant</p>
-          <h1>One space, so many possibilities</h1>
+        <div class="pinned-articles__item small">
+          <div class="tag">PINNED</div>
+          <div>
+            <p>by Patricia Jenkins and other authors</p>
+            <h1>A comfortable spot for everyone</h1>
+          </div>
         </div>
-        <div class="pinned-articles_item small dark">
-          <p>by James Bryant</p>
-          <h1>One space, so many possibilities</h1>
+        <div class="pinned-articles__item small">
+          <div class="tag">PINNED</div>
+          <div>
+            <p>by Margaret Robertson</p>
+            <h1>Anyone can hold hte helm when the sea is calm</h1>
+          </div>
         </div>
       </section>
 
       <section class="primary-articles">
         <div class="primary-articles__item">
-          <div class="primary-articles__item__tags">
-            <div class="primary-articles__item__tag">CREATIVE</div>
-            <div class="primary-articles__item__tag">CASE STUDY</div>
+          <div class="tags">
+            <div class="tag">CASE STUDY</div>
+            <div class="tag">OPEN SPACE</div>
           </div>
           <div class="primary-articles__item__title">
-            <h1>Problems are not stop signs</h1>
+            <h1>The perfect place that helps you get work done in peace</h1>
+          </div>
+          <div class="primary-articles__item__content">
+            <p>by Janet Robertson & Margaret Robertson</p>
+          </div>
+        </div>
+        <div class="primary-articles__item">
+          <div class="tags">
+            <div class="tag">FURNITURE</div>
+            <div class="tag">PRODUCTIVITY</div>
+          </div>
+          <div class="primary-articles__item__title">
+            <h1>I work best when my space is filled with inspiration</h1>
           </div>
           <div class="primary-articles__item__content">
             <p>
@@ -85,47 +102,140 @@
             </p>
           </div>
         </div>
-      </section>
-
-      <section class="earlier-articles">
-        <div class="earlier-articles__item">
-          <div class="earlier-articles__item__tags">
-            <div class="earlier-articles__item__tag">CREATIVE</div>
-            <div class="earlier-articles__item__tag">CASE STUDY</div>
+        <div class="primary-articles__item">
+          <div class="tags">
+            <div class="tag">CREATIVE</div>
+            <div class="tag">OPEN SPACE</div>
           </div>
-          <div class="earlier-articles__item__title">
-            <h1>Problems are not stop signs</h1>
+          <div class="primary-articles__item__title">
+            <h1>
+              The trick to getting more done is to have the freedom to roam
+              around
+            </h1>
           </div>
-          <div class="earlier-articles__item__content">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-              inventore exercitati.
-            </p>
+          <div class="primary-articles__item__content">
+            <p>by Patricia Jenkins</p>
           </div>
         </div>
       </section>
+
+      <div class="intro"><p>YOU REALLY MUST SEE OUR EARLIER ARTICLES</p></div>
+
+      <section class="earlier-articles">
+        <div class="earlier-articles__big-wrapper">
+          <div class="earlier-articles__item">
+            <div class="tags">
+              <div class="tag">CREATIVE</div>
+              <div class="tag">CASE STUDY</div>
+            </div>
+            <div class="earlier-articles__item__title">
+              <h1>Problems are not stop signs</h1>
+            </div>
+            <div class="earlier-articles__item__content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti inventore exercitati.
+              </p>
+            </div>
+          </div>
+          <div class="earlier-articles__item">
+            <div class="tags">
+              <div class="tag">CREATIVE</div>
+              <div class="tag">CASE STUDY</div>
+            </div>
+            <div class="earlier-articles__item__title">
+              <h1>Problems are not stop signs</h1>
+            </div>
+            <div class="earlier-articles__item__content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti inventore exercitati.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="earlier-articles__small-wrapper">
+          <div class="earlier-articles__item">
+            <div class="tags">
+              <div class="tag">CREATIVE</div>
+              <div class="tag">CASE STUDY</div>
+            </div>
+            <div class="earlier-articles__item__title">
+              <h1>Problems are not stop signs</h1>
+            </div>
+            <div class="earlier-articles__item__content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti inventore exercitati.
+              </p>
+            </div>
+          </div>
+          <div class="earlier-articles__item">
+            <div class="tags">
+              <div class="tag">CREATIVE</div>
+              <div class="tag">CASE STUDY</div>
+            </div>
+            <div class="earlier-articles__item__title">
+              <h1>Problems are not stop signs</h1>
+            </div>
+            <div class="earlier-articles__item__content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti inventore exercitati.
+              </p>
+            </div>
+          </div>
+          <div class="earlier-articles__item">
+            <div class="tags">
+              <div class="tag">CREATIVE</div>
+              <div class="tag">CASE STUDY</div>
+            </div>
+            <div class="earlier-articles__item__title">
+              <h1>Problems are not stop signs</h1>
+            </div>
+            <div class="earlier-articles__item__content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti inventore exercitati.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <button class="btn load-more-btn">LOAD MORE</button>
+
+      <section class="subscribe">
+        <h3>Subscribe to see what we're thinking</h3>
+        <h4>Start your day with Maido</h4>
+        <input type="text" placeholder="Your email address" />
+        <button class="btn subscribe-btn">Subscribe</button>
+      </section>
     </main>
     <footer>
-      <div class="footer-navigation">
-        <div>Home</div>
-        <div>Features</div>
-        <div>Style Guide</div>
-        <div>Contact</div>
-        <div>Demos</div>
-        <div>Get Theme</div>
-      </div>
-      <div class="copyright">
-        <p>
-          MAIDO © 2023. ALL RIGHT RESERVED. PUBLISHED WITH
-          <a href="https://ghost.org/">GHOST</a> &
-          <a href="https://fueko.net/">MAIDO</a>.
-        </p>
+      <div class="footer-left">
+        <nav class="nav-list">
+          <div class="nav-item">Home<span class="notification-dot"></span></div>
+          <div class="nav-item">Features</div>
+          <div class="nav-item">Style Guide</div>
+          <div class="nav-item">Contact</div>
+          <div class="nav-item">Demos</div>
+          <div class="nav-item">Get Theme</div>
+        </nav>
+
+        <div class="copyright">
+          <p>
+            MAIDO © 2023. ALL RIGHT RESERVED. PUBLISHED WITH
+            <a href="https://ghost.org/">GHOST</a> &
+            <a href="https://fueko.net/">MAIDO</a>.
+          </p>
+        </div>
       </div>
       <div class="social-links">
-        <img src="" alt="twitter" />
-        <img src="" alt="instagram" />
-        <img src="" alt="#" />
-        <img src="" alt="#" />
+        <img src="./assets/Logo_of_Twitter.svg" alt="twitter" />
+        <img src="./assets/Instagram_logo.svg" alt="instagram" />
+        <img src="./assets/Facebook.png" alt="facebook" />
+        <img src="./assets/Vimeo.png" alt="vimeo" />
       </div>
     </footer>
   </body>

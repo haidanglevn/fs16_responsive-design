@@ -1,5 +1,11 @@
-/* @use './functions/functions' as f;  // Adjust the path according to your project's structure
- */
+/* 
+@function get-background-color($index) {
+  $varName: "bg-" + $index;
+  @if variable-exists($varName) {
+    @return meta.variable-value($varName);
+  }
+  @return null; // or some default value
+} */
 * {
   padding: 0;
   margin: 0;
@@ -30,33 +36,38 @@ header .sticky-header img {
 
 main {
   background-color: #252530;
-  color: #ebebeb;
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 100vw;
 }
-main .header-nav {
+
+.header-nav {
   width: 1260px;
   height: 145px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 130px;
+  color: #ebebeb;
 }
-main .header-nav img {
+.header-nav img {
   height: 35px;
 }
-main .header-nav nav {
+
+.nav-list {
   display: flex;
 }
-main .header-nav .nav-item {
+
+.nav-item {
   margin: 0 7px;
   font-weight: bold;
   height: 25px;
 }
-main .header-nav .nav-item:first-child {
+.nav-item:first-child {
   position: relative;
 }
-main .header-nav .nav-item:first-child .notification-dot {
+.nav-item:first-child .notification-dot {
   position: absolute;
   top: -3px;
   right: -7px;
@@ -65,6 +76,217 @@ main .header-nav .nav-item:first-child .notification-dot {
   background-color: orange;
   border-radius: 50%;
   display: inline-block;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  background-color: transparent;
+  border: 1px solid gray;
+  width: fit-content;
+  padding: 3px;
+  font-size: 12px;
+  border-radius: 10px;
+  color: gray;
+  display: flex;
+  justify-content: center;
+}
+
+/* .sticky-left {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  transform: rotate(-90deg);
+
+  & p {
+    color: $font-color;
+  }
+} */
+.pinned-articles {
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "big small small" "big small small";
+  align-items: center;
+  gap: 10px;
+  padding: 30px 0;
+}
+.pinned-articles__item {
+  border-radius: 20px;
+  color: #333350;
+  height: 200px;
+  background-color: #337ccf;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+}
+.pinned-articles__item:first-child {
+  background-color: #ffc436;
+}
+.pinned-articles__item:nth-child(2) {
+  background-color: #ffdbaa;
+}
+.pinned-articles__item:nth-child(3) {
+  background-color: #ffb7b7;
+}
+.pinned-articles__item:nth-child(4) {
+  background-color: #ffb6d9;
+}
+.pinned-articles__item:nth-child(5) {
+  background-color: #feffac;
+}
+.pinned-articles__item.big {
+  height: 416px;
+  width: 100%;
+  grid-area: big;
+}
+.pinned-articles__item.big h1 {
+  font-size: 36px;
+}
+
+.primary-articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 50px;
+}
+.primary-articles__item {
+  width: 1200px;
+  min-height: 550px;
+  background-color: #ffc436;
+  background-size: cover;
+  color: #333350;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 10%;
+  border-radius: 20px;
+}
+.primary-articles__item__title {
+  font-size: 45px;
+}
+
+.intro {
+  padding: 50px 0;
+  color: #ebebeb;
+}
+
+.earlier-articles {
+  width: 1200px;
+}
+.earlier-articles__big-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+.earlier-articles__big-wrapper .earlier-articles__item {
+  min-height: 500px;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 5%;
+  border-radius: 20px;
+}
+.earlier-articles__small-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding-bottom: 50px;
+}
+.earlier-articles__small-wrapper .earlier-articles__item {
+  min-height: 400px;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 5%;
+  border-radius: 20px;
+}
+
+.btn {
+  font-size: 14px;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1200px;
+}
+.btn.load-more-btn {
+  width: 900px;
+}
+.btn.subscribe-btn {
+  width: 170px;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ebebeb;
+  padding: 100px 0;
+  gap: 30px;
+}
+.subscribe h3 {
+  font-size: 38px;
+}
+.subscribe h4 {
+  font-size: 30px;
+}
+.subscribe input {
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  outline: none;
+  transition: width 0.3s ease-in-out; /* This will make the change smooth */
+  width: 80%;
+  text-align: center;
+  font-size: 20px;
+  color: #ebebeb;
+  /* Hover effect */
+}
+.subscribe input:focus {
+  width: 110%; /* Expanding 10% in width */
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
+  background-color: #252530;
+  color: #ebebeb;
+}
+footer .footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+footer .copyright {
+  font-size: 10px;
+  margin: 20px 7px;
+}
+footer .copyright a {
+  text-decoration: none;
+  color: #ebebeb;
+}
+footer .copyright a:hover {
+  cursor: pointer;
+}
+footer .social-links {
+  display: flex;
+  gap: 10px;
+}
+footer .social-links img {
+  height: 16px;
+}
+footer .social-links img:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
