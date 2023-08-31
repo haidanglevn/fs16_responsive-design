@@ -16,4 +16,5 @@ Font family and text content can be modified as your preferences.
 The web page does not need to be fully responsive, but at least you should
 have responsive scaling for Flexbox and Grid system.
 
-
+## Live page
+[Live page here by GitHub Page](https://haidanglevn.github.io/fs16_responsive-design/src/)
