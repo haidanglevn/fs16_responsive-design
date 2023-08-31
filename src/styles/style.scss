@@ -1,11 +1,82 @@
-@use "./variables/colors" as colors;
-$font-size: 100px;
+/* @use './functions/functions' as f;  // Adjust the path according to your project's structure
+ */
+$black: #262626;
+$green: #82b440;
+$bg-body: #252530;
+$font-color: #ebebeb;
 
-body {
-  background-color: colors.$aqua-color;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-h1 {
-  color: red;
-  font-style: italic;
-  font-size: $font-size;
+
+header {
+  .sticky-header {
+    height: 54px;
+    background-color: $black;
+    color: white;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    & button {
+      background-color: $green;
+      color: white;
+      font-size: 14px;
+      padding: 5px 20px;
+      line-height: 1.5;
+      border-radius: 5px;
+    }
+
+    & img {
+      height: 20px;
+    }
+  }
+}
+
+main {
+  background-color: $bg-body;
+  color: $font-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header-nav {
+    width: 1260px;
+    height: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      height: 35px;
+    }
+    
+    nav {
+      display: flex;
+    }
+
+    .nav-item {
+      margin: 0 7px;
+      font-weight: bold;
+      height: 25px;
+
+      &:first-child {
+        position: relative;
+        .notification-dot {
+          position: absolute;
+          top: -3px;
+          right: -7px;
+          width: 7px;
+          height: 7px;
+          background-color: orange;
+          border-radius: 50%;
+          display: inline-block;
+        }
+      }
+    }
+  }
 }

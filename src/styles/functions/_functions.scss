@@ -1,0 +1,4 @@
+// Function to calculate the color variation based on index and base color
+@function color-variation($base-color, $index, $step: 5%) {
+  @return lighten($base-color, ($index - 1) * $step);
+}
