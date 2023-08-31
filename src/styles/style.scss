@@ -1,4 +1,3 @@
-@use "sass:meta";
 $black: #262626;
 $green: #82b440;
 $bg-body: #252530;
@@ -11,6 +10,12 @@ $bg-6: #337ccf;
 $bg-7: #ffc436;
 $font-color: #ebebeb;
 $font-color-dark: #333350;
+$font-size-base: 16;
+
+// Function to convert px to rem
+@function rem($pixels) {
+  @return #{round(calc($pixels / $font-size-base))}rem;
+}
 /* 
 @function get-background-color($index) {
   $varName: "bg-" + $index;
@@ -24,6 +29,7 @@ $font-color-dark: #333350;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: rem($font-size-base);
 }
 
 header {
@@ -65,8 +71,9 @@ main {
 }
 
 .header-nav {
-  width: 1260px;
-  height: 145px;
+  max-width: 1260px;
+  width: 80%;
+  height: rem(145);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -131,16 +138,16 @@ main {
   gap: 10px;
   max-width: 1300px;
   padding: 30px 0;
-  
+
   &__item {
     border-radius: 20px;
     color: $font-color-dark;
-    height: 200px;
     background-color: $bg-6;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 40px;
+    height: rem(200);
+    padding: rem(40);
     transition: transform 0.2s ease-in-out;
 
     &:hover {
@@ -164,12 +171,17 @@ main {
       background-color: $bg-5;
     }
     &.big {
-      height: 416px;
+      height: rem(416);
       width: 100%;
       grid-area: big;
 
       h1 {
         font-size: 36px;
+      }
+    }
+    &.small {
+      h1 {
+        font-size: 25px;
       }
     }
   }
@@ -180,14 +192,16 @@ main {
   flex-direction: column;
   align-items: center;
   row-gap: 50px;
+  max-width: 1200px;
+  width: 100%;
 
   &:hover {
     cursor: pointer;
   }
 
   &__item {
-    width: 1200px;
-    min-height: 550px;
+    min-height: rem(550);
+    width: 100%;
     background-color: $bg-7;
     background-size: cover;
     color: $font-color-dark;
@@ -198,7 +212,7 @@ main {
     padding: 10%;
     border-radius: 20px;
 
-    &__title {
+    &__title h1 {
       font-size: 45px;
     }
   }
@@ -210,7 +224,7 @@ main {
 }
 
 .earlier-articles {
-  width: 1200px;
+  max-width: 1200px;
 
   &__big-wrapper {
     display: flex;
@@ -219,7 +233,8 @@ main {
     padding-bottom: 50px;
 
     & .earlier-articles__item {
-      min-height: 500px;
+      min-height: rem(500);
+      width: 100%;
       background-color: $bg-4;
       display: flex;
       flex-direction: column;
@@ -246,7 +261,8 @@ main {
     padding-bottom: 50px;
 
     & .earlier-articles__item {
-      min-height: 400px;
+      min-height: rem(400);
+      width: 100%;
       background-color: $bg-5;
       display: flex;
       flex-direction: column;
@@ -276,10 +292,12 @@ main {
   color: $font-color;
 
   &.load-more-btn {
-    width: 900px;
+    max-width: 900px;
+    width: 80%;
   }
   &.subscribe-btn {
-    width: 170px;
+    max-width: 170px;
+    width: 30%;
   }
   &:hover {
     background-color: $bg-7;
@@ -358,5 +376,28 @@ footer {
         cursor: pointer;
       }
     }
+  }
+}
+// Media queries for extra responsiveness
+@media screen and (max-width: 768px) {
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pinned-articles {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+      "big"
+      "small"
+      "small"
+      "small"
+      "small";
+  }
+
+  .earlier-articles__big-wrapper,
+  .earlier-articles__small-wrapper {
+    flex-direction: column;
   }
 }
