@@ -10,7 +10,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 1rem;
 }
 
 header .sticky-header {
@@ -68,12 +67,21 @@ main {
   margin: 0 7px;
   font-weight: bold;
   height: 25px;
+  position: relative;
 }
 .nav-item:hover {
   cursor: pointer;
 }
-.nav-item:first-child {
-  position: relative;
+.nav-item:hover::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  right: -7px;
+  width: 7px;
+  height: 7px;
+  background-color: gray;
+  border-radius: 50%;
+  display: inline-block;
 }
 .nav-item:first-child .notification-dot {
   position: absolute;
@@ -84,6 +92,9 @@ main {
   background-color: orange;
   border-radius: 50%;
   display: inline-block;
+}
+.nav-item:first-child:hover::before {
+  background-color: orange;
 }
 
 .tags {
@@ -121,7 +132,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   height: 13rem;
-  padding: 3rem;
+  padding: 2rem;
   transition: transform 0.2s ease-in-out;
 }
 .pinned-articles__item:hover {
@@ -191,6 +202,9 @@ main {
 .earlier-articles {
   max-width: 1200px;
 }
+.earlier-articles__item {
+  width: 100%;
+}
 .earlier-articles__big-wrapper {
   display: flex;
   justify-content: space-between;
@@ -199,7 +213,6 @@ main {
 }
 .earlier-articles__big-wrapper .earlier-articles__item {
   min-height: 31rem;
-  width: 100%;
   background-color: #ffb6d9;
   display: flex;
   flex-direction: column;
@@ -213,7 +226,7 @@ main {
   cursor: pointer;
 }
 .earlier-articles__big-wrapper .earlier-articles__item__title {
-  font-size: 30px;
+  font-size: 35px;
 }
 .earlier-articles__small-wrapper {
   display: flex;
@@ -223,7 +236,6 @@ main {
 }
 .earlier-articles__small-wrapper .earlier-articles__item {
   min-height: 25rem;
-  width: 100%;
   background-color: #feffac;
   display: flex;
   flex-direction: column;
@@ -275,6 +287,25 @@ main {
 }
 .subscribe h4 {
   font-size: 30px;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  /* The typing effect */
+  /* The typewriter cursor effect */
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
 .subscribe input {
   border: none;
@@ -335,6 +366,15 @@ footer .social-links img:hover {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, auto);
     grid-template-areas: "big" "small" "small" "small" "small";
+  }
+  .primary-articles__item {
+    width: 80%;
+  }
+  .earlier-articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
   }
   .earlier-articles__big-wrapper,
   .earlier-articles__small-wrapper {
